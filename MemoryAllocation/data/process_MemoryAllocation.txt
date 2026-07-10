@@ -1,0 +1,18 @@
+# Archivo de entrada de ejemplo para el simulador de Asignacion de Memoria
+# Formato:
+#   TOTAL_MEMORIA=<numero>        -> define el tamaño total de la memoria (una sola vez, al inicio)
+#   CREAR,<tamaño>                -> crea un proceso nuevo con ese tamaño (PID automático y secuencial)
+#   LIBERAR,<pid>                 -> libera el proceso con ese PID
+#
+# NOTA: La estrategia (FirstFit, BestFit, WorstFit) se selecciona por consola, no en este archivo.
+# Las lineas que empiezan con '#' son comentarios y deben ser ignoradas al leer el archivo.
+# Las lineas vacias tambien deben ser ignoradas.
+
+TOTAL_MEMORIA=1024
+
+CREAR,120
+CREAR,200
+CREAR,300
+LIBERAR,2
+CREAR,150
+CREAR,500

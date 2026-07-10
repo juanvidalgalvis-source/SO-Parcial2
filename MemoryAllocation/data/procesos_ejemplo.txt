@@ -1,0 +1,30 @@
+# Archivo diseñado para producir resultados DIFERENTES segun la estrategia usada.
+# Ejecuta este mismo archivo 3 veces (una por cada estrategia: FirstFit, BestFit, WorstFit)
+# y compara donde queda asignado el proceso final y la fragmentacion externa resultante.
+#
+# Logica del diseño:
+#   Se crean 5 procesos, dejando "espaciadores" ocupados entre ellos para evitar
+#   que los huecos se fusionen (coalescing) al liberar.
+#   Luego se liberan 3 de ellos, dejando exactamente 3 huecos libres NO contiguos
+#   de tamaños distintos: 250, 500 y 220 (en ese orden de aparicion en memoria).
+#   El ultimo CREAR,200 es la prueba real:
+#     - First Fit  -> elegira el PRIMER hueco que alcance -> el de 250
+#     - Best Fit   -> elegira el hueco MAS AJUSTADO que alcance -> el de 220
+#     - Worst Fit  -> elegira el hueco MAS GRANDE disponible -> el de 500
+#   Resultado esperado: cada estrategia asigna el proceso 6 en una base distinta,
+#   y Worst Fit termina con MAYOR fragmentacion externa que las otras dos.
+
+TOTAL_MEMORIA=1120
+
+CREAR,250
+CREAR,100
+CREAR,500
+CREAR,50
+CREAR,220
+
+LIBERAR,1
+LIBERAR,3
+LIBERAR,5
+
+# En este punto quedan 3 huecos libres no contiguos: 250, 500 y 220
+CREAR,200
