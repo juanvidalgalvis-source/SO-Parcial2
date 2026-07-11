@@ -17,29 +17,29 @@ Bloque 1:
 
 Bloque 2:
   Base: 350
-  Tamaño: 200
-  Estado: OCUPADO
-  PID: 6
-
-Bloque 3:
-  Base: 550
-  Tamaño: 300
+  Tamaño: 500
   Estado: LIBRE
 
-Bloque 4:
+Bloque 3:
   Base: 850
   Tamaño: 50
   Estado: OCUPADO
   PID: 4
 
-Bloque 5:
+Bloque 4:
   Base: 900
-  Tamaño: 220
+  Tamaño: 200
+  Estado: OCUPADO
+  PID: 6
+
+Bloque 5:
+  Base: 1100
+  Tamaño: 20
   Estado: LIBRE
 
 RESUMEN
 --------------------------------------------------------------------------------
-Fragmentación externa: 470
+Fragmentación externa: 270
 Fragmentación interna: 0
 
 PROCESOS
@@ -50,7 +50,7 @@ PID=2, solicitado=100, ASIGNADO, base=250
 PID=3, solicitado=500, NO ASIGNADO
 PID=4, solicitado=50, ASIGNADO, base=850
 PID=5, solicitado=220, NO ASIGNADO
-PID=6, solicitado=200, ASIGNADO, base=350
+PID=6, solicitado=200, ASIGNADO, base=900
 
 REGISTRO DE COMANDOS
 --------------------------------------------------------------------------------
