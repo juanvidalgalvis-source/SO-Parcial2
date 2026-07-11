@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Reporte - Traduccion de Direcciones</title>
+<style>
+body { font-family: Arial, sans-serif; margin: 20px; background:#fafafa; }
+h1 { color:#2c3e50; }
+table { border-collapse: collapse; width: 100%; margin-bottom: 24px; background:#fff; }
+th, td { border: 1px solid #ccc; padding: 6px 10px; text-align: left; font-size: 14px; }
+th { background-color: #34495e; color: #fff; }
+.free { color: #27ae60; font-weight: bold; }
+.occupied { color: #c0392b; font-weight: bold; }
+.summary-box { background: #eef2f7; padding: 14px 18px; border-radius: 6px; margin-bottom: 24px; }
+.summary-box p { margin: 4px 0; }
+</style>
+</head>
+<body>
+<h1>Reporte de Traduccion de Direcciones (Paginacion de un nivel)</h1>
+<div class="summary-box">
+<p><b>Memoria virtual total:</b> 300 | <b>Usada:</b> 121</p>
+<p><b>Memoria fisica total:</b> 900</p>
+<p><b>Tamano de pagina:</b> 70</p>
+<p><b>Marcos disponibles:</b> 3 / 12</p>
+</div>
+<h2>Marcos de memoria fisica</h2>
+<table>
+<tr><th>Marco</th><th>Estado</th><th>PID</th><th>Pagina</th></tr>
+<tr><td>0</td><td class="occupied">Ocupado</td><td>1</td><td>0</td></tr>
+<tr><td>1</td><td class="occupied">Ocupado</td><td>1</td><td>1</td></tr>
+<tr><td>2</td><td class="occupied">Ocupado</td><td>1</td><td>0</td></tr>
+<tr><td>3</td><td class="occupied">Ocupado</td><td>1</td><td>0</td></tr>
+<tr><td>4</td><td class="occupied">Ocupado</td><td>1</td><td>0</td></tr>
+<tr><td>5</td><td class="occupied">Ocupado</td><td>1</td><td>0</td></tr>
+<tr><td>6</td><td class="occupied">Ocupado</td><td>1</td><td>0</td></tr>
+<tr><td>7</td><td class="occupied">Ocupado</td><td>1</td><td>0</td></tr>
+<tr><td>8</td><td class="occupied">Ocupado</td><td>1</td><td>0</td></tr>
+<tr><td>9</td><td class="free">Libre</td><td>-</td><td>-</td></tr>
+<tr><td>10</td><td class="free">Libre</td><td>-</td><td>-</td></tr>
+<tr><td>11</td><td class="free">Libre</td><td>-</td><td>-</td></tr>
+</table>
+<h2>Tabla de paginas</h2>
+<table>
+<tr><th>PID</th><th>Pagina</th><th>Marco</th></tr>
+<tr><td>1</td><td>0</td><td>0</td></tr>
+<tr><td>1</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>0</td><td>2</td></tr>
+<tr><td>1</td><td>0</td><td>3</td></tr>
+<tr><td>1</td><td>0</td><td>4</td></tr>
+<tr><td>1</td><td>0</td><td>5</td></tr>
+<tr><td>1</td><td>0</td><td>6</td></tr>
+<tr><td>1</td><td>0</td><td>7</td></tr>
+<tr><td>1</td><td>0</td><td>8</td></tr>
+</table>
+<h2>Procesos</h2>
+<table>
+<tr><th>PID</th><th>Tamano virtual</th><th>Paginas</th><th>Asignado</th></tr>
+<tr><td>1</td><td>100</td><td>2</td><td>Si</td></tr>
+<tr><td>1</td><td>5</td><td>1</td><td>Si</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>Si</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>Si</td></tr>
+<tr><td>1</td><td>11</td><td>1</td><td>Si</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>Si</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>Si</td></tr>
+<tr><td>1</td><td>1</td><td>1</td><td>Si</td></tr>
+</table>
+<h2>Registro de comandos</h2>
+<table>
+<tr><th>#</th><th>Resultado</th></tr>
+<tr><td>1</td><td>CREAR,1,100 -&gt; OK</td></tr>
+<tr><td>2</td><td>CREAR,1,5 -&gt; OK</td></tr>
+<tr><td>3</td><td>CREAR,1,1 -&gt; OK</td></tr>
+<tr><td>4</td><td>CREAR,1,1 -&gt; OK</td></tr>
+<tr><td>5</td><td>CREAR,1,11 -&gt; OK</td></tr>
+<tr><td>6</td><td>CREAR,1,1 -&gt; OK</td></tr>
+<tr><td>7</td><td>CREAR,1,1 -&gt; OK</td></tr>
+<tr><td>8</td><td>CREAR,1,1 -&gt; OK</td></tr>
+<tr><td>9</td><td>TRADUCIR,1,1 -&gt; OK: 1</td></tr>
+<tr><td>10</td><td>TRADUCIR,4,0 -&gt; ERROR: PID no existe o la dirección virtual no es válida.</td></tr>
+</table>
+</body>
+</html>

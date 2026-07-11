@@ -1,0 +1,48 @@
+===== Reporte de Traduccion de Direcciones (Paginacion de un nivel) =====
+
+Memoria virtual total : 40 | Usada: 20
+Memoria fisica total  : 64
+Tamano de pagina      : 4
+Marcos disponibles    : 11 / 16
+
+--- Marcos de memoria fisica ---
+Marco 0: ocupado por PID=3 (pagina 0)
+Marco 1: ocupado por PID=3 (pagina 1)
+Marco 2: ocupado por PID=3 (pagina 2)
+Marco 3: ocupado por PID=2 (pagina 0)
+Marco 4: ocupado por PID=2 (pagina 1)
+Marco 5: libre
+Marco 6: libre
+Marco 7: libre
+Marco 8: libre
+Marco 9: libre
+Marco 10: libre
+Marco 11: libre
+Marco 12: libre
+Marco 13: libre
+Marco 14: libre
+Marco 15: libre
+
+--- Tabla de paginas ---
+PID=2 | Pagina=0 | Marco=3
+PID=2 | Pagina=1 | Marco=4
+PID=3 | Pagina=0 | Marco=0
+PID=3 | Pagina=1 | Marco=1
+PID=3 | Pagina=2 | Marco=2
+
+--- Procesos ---
+PID=2 | Tamano virtual=8 | Paginas=2 | Asignado=Si
+PID=3 | Tamano virtual=12 | Paginas=3 | Asignado=Si
+PID=4 | Tamano virtual=25 | Paginas=7 | Asignado=No
+
+--- Registro de comandos ---
+1. Línea: CREAR,1,12 -> OK
+2. Línea: CREAR,2,8 -> OK
+3. Línea: TRADUCIR,1,0 -> OK: 0
+4. Línea: TRADUCIR,1,5 -> OK: 5
+5. Línea: TRADUCIR,1,11 -> OK: 11
+6. Línea: TRADUCIR,1,15 -> ERROR: no se pudo traducir
+7. Línea: LIBERAR,1 -> OK
+8. Línea: CREAR,3,12 -> OK
+9. Línea: TRADUCIR,1,0 -> ERROR: no se pudo traducir
+10. Línea: CREAR,4,25 -> ERROR

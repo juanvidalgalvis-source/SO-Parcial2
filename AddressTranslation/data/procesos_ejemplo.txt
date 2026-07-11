@@ -1,0 +1,40 @@
+# Archivo de ejemplo para el simulador de traduccion de direcciones (paginacion de un nivel)
+# Formato: encabezados CLAVE=valor primero, luego comandos CREAR/LIBERAR/TRADUCIR
+#
+# Con MEMORIA_FISICA=64 y TAMANO_PAGINA=4 hay 16 marcos fisicos disponibles.
+# MEMORIA_VIRTUAL=40 es el limite total de memoria virtual que pueden sumar
+# los procesos asignados.
+
+MEMORIA_FISICA=64
+MEMORIA_VIRTUAL=40
+TAMANO_PAGINA=4
+
+# Proceso 1 pide 12 -> necesita 3 paginas (ceil(12/4)). Marcos usados: 3/16. Virtual usada: 12/40.
+CREAR,1,12
+
+# Proceso 2 pide 8 -> necesita 2 paginas (ceil(8/4)). Marcos usados: 5/16. Virtual usada: 20/40.
+CREAR,2,8
+
+# Traducciones validas sobre el proceso 1 (virtualSize=12: direcciones 0 a 11)
+TRADUCIR,1,0
+TRADUCIR,1,5
+TRADUCIR,1,11
+
+# Traduccion invalida: direccion fuera del rango virtual del proceso 1 (>=12)
+TRADUCIR,1,15
+
+# Liberamos el proceso 1: libera 3 marcos (quedan 14/16 libres) y baja el uso
+# de memoria virtual a 8/40 (solo el proceso 2 sigue activo)
+LIBERAR,1
+
+# Proceso 3 pide 12 -> necesita 3 paginas. Hay marcos de sobra (14 libres) y la
+# memoria virtual alcanza (8+12=20 <= 40), asi que esta creacion SI debe funcionar
+CREAR,3,12
+
+# Traduccion sobre el proceso 1 despues de liberado: debe fallar (el proceso ya no existe)
+TRADUCIR,1,0
+
+# Proceso 4 pide 25: hay marcos de sobra (quedan 11 libres, se necesitan 7),
+# pero la memoria virtual usada seria 20+25=45 > 40 -> esta creacion debe FALLAR
+# especificamente por el limite de memoria virtual, no por falta de marcos
+CREAR,4,25
