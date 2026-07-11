@@ -1,10 +1,10 @@
-<html><head><meta charset="UTF-8"><title>Reporte de Memoria</title><style>body{font-family:Arial,sans-serif;}table{border-collapse:collapse;width:100%;}th,td{border:1px solid #ccc;padding:8px;text-align:left;}th{background:#f3f3f3;}</style></head><body><h1>Reporte de Memoria</h1><h2>Bloques</h2><table><thead><tr><th>Bloque</th><th>Base</th><th>Tamaño</th><th>Estado</th><th>PID</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>200</td><td>OCUPADO</td><td>6</td></tr><tr><td>1</td><td>200</td><td>50</td><td>LIBRE</td><td>-</td></tr><tr><td>2</td><td>250</td><td>100</td><td>OCUPADO</td><td>2</td></tr><tr><td>3</td><td>350</td><td>500</td><td>LIBRE</td><td>-</td></tr><tr><td>4</td><td>850</td><td>50</td><td>OCUPADO</td><td>4</td></tr><tr><td>5</td><td>900</td><td>220</td><td>LIBRE</td><td>-</td></tr></tbody></table><h2>Resumen</h2><p>Fragmentación externa: 270</p><p>Fragmentación interna: 0</p><h2>Procesos</h2><pre>Procesos:
+<html><head><meta charset="UTF-8"><title>Reporte de Memoria</title><style>body{font-family:Arial,sans-serif;}table{border-collapse:collapse;width:100%;}th,td{border:1px solid #ccc;padding:8px;text-align:left;}th{background:#f3f3f3;}</style></head><body><h1>Reporte de Memoria</h1><h2>Bloques</h2><table><thead><tr><th>Bloque</th><th>Base</th><th>Tamaño</th><th>Estado</th><th>PID</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>250</td><td>LIBRE</td><td>-</td></tr><tr><td>1</td><td>250</td><td>100</td><td>OCUPADO</td><td>2</td></tr><tr><td>2</td><td>350</td><td>500</td><td>LIBRE</td><td>-</td></tr><tr><td>3</td><td>850</td><td>50</td><td>OCUPADO</td><td>4</td></tr><tr><td>4</td><td>900</td><td>200</td><td>OCUPADO</td><td>6</td></tr><tr><td>5</td><td>1100</td><td>20</td><td>LIBRE</td><td>-</td></tr></tbody></table><h2>Resumen</h2><p>Fragmentación externa: 270</p><p>Fragmentación interna: 0</p><h2>Procesos</h2><pre>Procesos:
 PID=1, solicitado=250, NO ASIGNADO
 PID=2, solicitado=100, ASIGNADO, base=250
 PID=3, solicitado=500, NO ASIGNADO
 PID=4, solicitado=50, ASIGNADO, base=850
 PID=5, solicitado=220, NO ASIGNADO
-PID=6, solicitado=200, ASIGNADO, base=0
+PID=6, solicitado=200, ASIGNADO, base=900
 </pre><h2>Registro de comandos</h2><pre>Línea 19: CREAR,250 -&gt; OK PID 1
 Línea 20: CREAR,100 -&gt; OK PID 2
 Línea 21: CREAR,500 -&gt; OK PID 3
