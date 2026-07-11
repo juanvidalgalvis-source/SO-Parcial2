@@ -6,35 +6,35 @@ BLOQUES DE MEMORIA
 --------------------------------------------------------------------------------
 Bloque 0:
   Base: 0
-  Tamaño: 250
-  Estado: LIBRE
+  Tamaño: 200
+  Estado: OCUPADO
+  PID: 6
 
 Bloque 1:
+  Base: 200
+  Tamaño: 50
+  Estado: LIBRE
+
+Bloque 2:
   Base: 250
   Tamaño: 100
   Estado: OCUPADO
   PID: 2
 
-Bloque 2:
+Bloque 3:
   Base: 350
   Tamaño: 500
   Estado: LIBRE
 
-Bloque 3:
+Bloque 4:
   Base: 850
   Tamaño: 50
   Estado: OCUPADO
   PID: 4
 
-Bloque 4:
-  Base: 900
-  Tamaño: 200
-  Estado: OCUPADO
-  PID: 6
-
 Bloque 5:
-  Base: 1100
-  Tamaño: 20
+  Base: 900
+  Tamaño: 220
   Estado: LIBRE
 
 RESUMEN
@@ -50,7 +50,7 @@ PID=2, solicitado=100, ASIGNADO, base=250
 PID=3, solicitado=500, NO ASIGNADO
 PID=4, solicitado=50, ASIGNADO, base=850
 PID=5, solicitado=220, NO ASIGNADO
-PID=6, solicitado=200, ASIGNADO, base=900
+PID=6, solicitado=200, ASIGNADO, base=0
 
 REGISTRO DE COMANDOS
 --------------------------------------------------------------------------------
